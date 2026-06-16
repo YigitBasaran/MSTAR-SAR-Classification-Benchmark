@@ -1,0 +1,32 @@
+{
+  "traditional": {
+    "accuracy": 0.8597938144329897,
+    "macro_f1": 0.8464114625275609,
+    "macro_precision": 0.8616858365943763,
+    "macro_recall": 0.8446283712811345,
+    "train_time_sec": 96.17961320001632,
+    "inference_ms_per_image": 50.027301195869704,
+    "model_size_mb": 172.2239170074463,
+    "feature_dim": 8190
+  },
+  "cnn": {
+    "accuracy": 0.9249484536082474,
+    "macro_f1": 0.9151830452478583,
+    "macro_precision": 0.9164180575724457,
+    "macro_recall": 0.9150887676800086,
+    "train_time_sec": 156.1408030000166,
+    "inference_ms_per_image": 6.41326719999779,
+    "model_size_mb": 42.73045539855957,
+    "feature_dim": 512
+  },
+  "vit": {
+    "accuracy": 0.9579381443298969,
+    "macro_f1": 0.9503236602092695,
+    "macro_precision": 0.9514962348570428,
+    "macro_recall": 0.9501441328917867,
+    "train_time_sec": 400.8166841000202,
+    "inference_ms_per_image": 10.180254800012335,
+    "model_size_mb": 82.71969795227051,
+    "feature_dim": 384
+  }
+}
