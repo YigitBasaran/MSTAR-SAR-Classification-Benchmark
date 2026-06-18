@@ -30,8 +30,13 @@ def run_tsne(X, seed=42, pca_dim=50, perplexity=30):
                 init="pca").fit_transform(X)
 
 
-def plot_tsne_comparison(panels, classes, path):
-    """``panels``: list of ``(title, emb2d, labels)`` (one per subplot)."""
+def plot_tsne_comparison(panels, classes, path,
+                         suptitle="Feature Space Comparison: Raw Pixels vs ResNet18 vs DeiT-Small"):
+    """``panels``: list of ``(title, emb2d, labels)`` (one per subplot).
+
+    ``suptitle`` overrides the figure title; the default reproduces the original
+    raw-pixel comparison so existing callers are unaffected.
+    """
     fig, axes = plt.subplots(1, len(panels), figsize=(7 * len(panels), 7))
     if len(panels) == 1:
         axes = [axes]
@@ -45,8 +50,7 @@ def plot_tsne_comparison(panels, classes, path):
         ax.set_yticks([])
     handles, lbls = axes[0].get_legend_handles_labels()
     fig.legend(handles, lbls, loc="lower center", ncol=10, fontsize=9, markerscale=2)
-    fig.suptitle("Feature Space Comparison: Raw Pixels vs ResNet18 vs DeiT-Small",
-                 fontsize=15)
+    fig.suptitle(suptitle, fontsize=15)
     fig.tight_layout(rect=[0, 0.06, 1, 0.95])
     fig.savefig(path, dpi=150)
     plt.close(fig)
