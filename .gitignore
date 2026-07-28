@@ -1,1 +1,5 @@
-models/
+# models/ is tracked. traditional_pipeline.joblib is stored lzma-compressed
+# (172 -> 80 MB) to stay under GitHub's 100 MB per-file limit; see notebooks/02_traditional.ipynb.
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
